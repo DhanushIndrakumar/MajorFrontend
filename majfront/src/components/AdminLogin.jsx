@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
-export default function Login() {
+export default function AdminLogin() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -44,7 +44,7 @@ export default function Login() {
   return (
     <div className="bg-gray-900 h-screen flex items-center justify-center">
       <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-6">Login</h2>
+        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-6">Admin Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
@@ -91,14 +91,7 @@ export default function Login() {
           </p>
         </div>
 
-        <div className="mt-4 text-center">
-          <p className="text-sm text-gray-600">
-            Admin Access?{' '}
-            <Link to="/adminlogin" className="text-indigo-600 hover:underline">
-              Login
-            </Link>
-          </p>
-        </div>
+        
       </div>
     </div>
   );

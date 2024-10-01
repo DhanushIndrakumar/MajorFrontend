@@ -24,35 +24,6 @@ export default function Learn() {
             </ul>
           </div>
         </div>
-
-        {/* Additional Images Section */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <img
-              className="w-full h-64 object-cover rounded-lg"
-              src="https://media.istockphoto.com/id/1137539144/photo/view-from-back-seat-at-coach-bus-more-seats-in-blurred-background.jpg?s=612x612&w=0&k=20&c=0vmibUwm2ntH4xT8L2te2grpYimIF8A01h3XZmWIKzY="
-              alt="Choose your seat"
-            />
-            <p className="text-center mt-4 text-lg text-gray-300">Choose your seat</p>
-          </div>
-          <div>
-            <img
-              className="w-full h-64 object-cover rounded-lg"
-              src="https://static.vecteezy.com/system/resources/previews/002/744/886/original/real-time-schedule-illustration-vector.jpg"
-              alt="Real-time updates"
-            />
-            <p className="text-center mt-4 text-lg text-gray-300">Real-time schedule updates</p>
-          </div>
-          <div>
-            <img
-              className="w-full h-64 object-cover rounded-lg"
-              src="https://cdn.prod.website-files.com/627bcc3621084c83da56b474/641491ddeffdd221f7aa117b_what%20is%20a%20secure%20payment.jpg"
-              alt="Secure payment"
-            />
-            <p className="text-center mt-4 text-lg text-gray-300">Secure online payment</p>
-          </div>
-        </div>
-
         {/* Back to Home Button */}
         <div className="mt-8">
           <a
