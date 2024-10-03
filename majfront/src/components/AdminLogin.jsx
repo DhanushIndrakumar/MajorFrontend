@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 export default function AdminLogin() {
   const [formData, setFormData] = useState({
     email: '',
@@ -29,7 +30,7 @@ export default function AdminLogin() {
         localStorage.setItem('token', token);
 
         // Navigate to the dashboard or home page
-        navigate('/dashboard');
+        navigate('/adminDashboard');
       }
     } catch (error) {
       // Handle login errors (e.g., invalid credentials)

@@ -6,6 +6,15 @@ import Register from './components/Register';
 import Login from './components/Login';
 import './index.css';
 import AdminLogin from './components/AdminLogin';
+import UserDashboard from './components/UserDashboard';
+import AdminDashboard from './components/AdminDashboard';
+import ViewBookings from './components/ViewBookings';
+import ViewBuses from './components/ViewBuses';
+import CancelBooking from './components/CancelBooking';
+import Buses from './components/Buses';
+import Billing from './components/Billing';
+import Confirmation from './components/Confirmation';
+
 
 function App() {
   return (
@@ -16,6 +25,15 @@ function App() {
           <Route path="/book-now" element={<Register/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/userDashboard" element={<UserDashboard />} />
+          <Route path="/adminDashboard" element={<AdminDashboard />} />
+          <Route path="/viewBookings" element={<ViewBookings />} />
+          <Route path="/viewBuses" element={<ViewBuses />} />
+          <Route path="/cancelBooking" element={<CancelBooking />} />
+          <Route path="/buses" element={<Buses />} />
+          <Route path="/billing" element={<Billing />} />
+          <Route path="/confirm" element={<Confirmation />} />
+          
       </Routes>
       
     </div>

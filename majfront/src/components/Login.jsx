@@ -29,7 +29,7 @@ export default function Login() {
         localStorage.setItem('token', token);
 
         // Navigate to the dashboard or home page
-        navigate('/dashboard');
+        navigate('/userDashboard');
       }
     } catch (error) {
       // Handle login errors (e.g., invalid credentials)
