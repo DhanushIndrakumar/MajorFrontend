@@ -51,12 +51,11 @@ function UserDashboard() {
             View Buses
           </a>
 
-          {/* Cancel Booking */}
+         
           <a
             href="/cancelBooking"
-            className="px-6 py-4 bg-red-600 text-white text-lg font-medium rounded-lg shadow hover:bg-red-500 transition duration-300 ease-in-out"
-          >
-            Cancel Booking
+            className="px-2 py-2 "
+          >   
           </a>
 
           {/* My Bookings */}

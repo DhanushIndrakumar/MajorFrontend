@@ -12,7 +12,7 @@ export default function Billing() {
     price: 0,
     busName: '',
     noOfTickets: 1, // Default value
-    totalCalculated: 0,
+    totalCalculated: 0, // Set to 0 initially
     busId: 0,
     email: '', // To be filled from user details
   });
@@ -30,6 +30,7 @@ export default function Billing() {
     const selectedBus = buses.find(bus => bus.busId === Number(selectedBusId));
     
     if (selectedBus) {
+      const initialTotal = (selectedBus.price * 1).toFixed(2); // Calculate total for one ticket
       setBookingData({
         ...bookingData,
         departureDate: selectedBus.departureDate,
@@ -40,6 +41,7 @@ export default function Billing() {
         busName: selectedBus.busName,
         busId: selectedBus.busId,
         email: userDetails.email || '', // Use user email from retrieved userDetails
+        totalCalculated: initialTotal, // Set initial total based on one ticket
       });
     } else {
       console.error('No bus found with the selected ID');
@@ -62,7 +64,7 @@ export default function Billing() {
     // Get user details from local storage for userId and token
     const userDetails = JSON.parse(localStorage.getItem('userDetails'));
     const userId = userDetails.userId;
-    const token = localStorage.getItem('token') // Assuming token is stored in local storage
+    const token = localStorage.getItem('token'); // Assuming token is stored in local storage
 
     try {
       // Send a POST request to the backend
