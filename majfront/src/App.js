@@ -14,6 +14,9 @@ import CancelBooking from './components/CancelBooking';
 import Buses from './components/Buses';
 import Billing from './components/Billing';
 import Confirmation from './components/Confirmation';
+import AddBus from './components/AddBus';
+import ViewAllBookings from './components/ViewAllBookings';
+import AllBuses from './components/AllBuses';
 
 
 function App() {
@@ -33,6 +36,9 @@ function App() {
           <Route path="/buses" element={<Buses />} />
           <Route path="/billing" element={<Billing />} />
           <Route path="/confirm" element={<Confirmation />} />
+          <Route path="/addBus" element={<AddBus />} />
+          <Route path="/viewAllBookings" element={<ViewAllBookings />} />
+          <Route path="/allBuses" element={<AllBuses />} />
           
       </Routes>
       
