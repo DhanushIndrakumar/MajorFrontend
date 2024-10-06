@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function AdminDashboard() {
   const [userName, setUserName] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate for redirection
 
   useEffect(() => {
     // Get token from local storage
@@ -31,6 +33,15 @@ function AdminDashboard() {
     }
   }, []); // Empty dependency array ensures this runs once when the component loads
 
+  const handleLogout = () => {
+    // Remove the token and userDetails from local storage
+    localStorage.removeItem('token');
+    localStorage.removeItem('userDetails');
+
+    // Navigate to the logout page
+    navigate('/logout');
+  };
+
   return (
     <div className="bg-gray-900 h-screen flex flex-col items-center justify-center">
       <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 py-16">
@@ -43,28 +54,39 @@ function AdminDashboard() {
 
         {/* Dashboard Options */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {/* View Buses */}
+          {/* Add Bus */}
           <a
             href="/addBus"
             className="px-6 py-4 bg-indigo-600 text-white text-lg font-medium rounded-lg shadow hover:bg-indigo-500 transition duration-300 ease-in-out"
           >
-           Add Bus
+            Add Bus
           </a>
 
+          {/* View Scheduled Buses */}
           <a
             href="/allBuses"
             className="px-6 py-4 bg-gray-600 text-white text-lg font-medium rounded-lg shadow hover:bg-gray-500 transition duration-300 ease-in-out"
           >
-           View Buses Scheduled
+            View Buses Scheduled
           </a>
 
-          {/*Bookings */}
+          {/* All Bookings */}
           <a
             href="/viewAllBookings"
             className="px-6 py-4 bg-green-600 text-white text-lg font-medium rounded-lg shadow hover:bg-green-500 transition duration-300 ease-in-out"
           >
-           All Bookings
+            All Bookings
           </a>
+        </div>
+
+        {/* Logout Option */}
+        <div className="mt-10">
+          <button
+            onClick={handleLogout}
+            className="px-6 py-4 bg-red-600 text-white text-lg font-medium rounded-lg shadow hover:bg-red-500 transition duration-300 ease-in-out"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </div>

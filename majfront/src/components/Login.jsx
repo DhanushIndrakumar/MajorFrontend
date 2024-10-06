@@ -8,6 +8,7 @@ export default function Login() {
     password: '',
   });
 
+  const [errorMessage, setErrorMessage] = useState(''); // State for error message
   const navigate = useNavigate(); // Initialize navigate hook
 
   const handleChange = (e) => {
@@ -35,8 +36,10 @@ export default function Login() {
       // Handle login errors (e.g., invalid credentials)
       if (error.response) {
         console.error('Error:', error.response.data.message);
+        setErrorMessage('Invalid User Email or Password'); // Set error message for wrong credentials
       } else {
         console.error('Error:', error.message);
+        setErrorMessage('An error occurred, please try again.'); // Set error message for other errors
       }
     }
   };
@@ -45,6 +48,11 @@ export default function Login() {
     <div className="bg-gray-900 h-screen flex items-center justify-center">
       <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
         <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-6">Login</h2>
+
+        {errorMessage && (
+          <p className="text-red-500 text-center mb-4">{errorMessage}</p> // Display error message
+        )}
+
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>

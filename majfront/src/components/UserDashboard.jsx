@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 function UserDashboard() {
   const [userName, setUserName] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate for redirection
+
 
   useEffect(() => {
     // Get token from local storage
@@ -30,6 +34,15 @@ function UserDashboard() {
       console.log("Token not found in local storage.");
     }
   }, []); // Empty dependency array ensures this runs once when the component loads
+  const handleLogout = () => {
+    // Remove the token and userDetails from local storage
+    localStorage.removeItem('token');
+    localStorage.removeItem('userDetails');
+
+    // Navigate to the logout page
+    navigate('/logout');
+  };
+
 
   return (
     <div className="bg-gray-900 h-screen flex flex-col items-center justify-center">
@@ -65,6 +78,15 @@ function UserDashboard() {
           >
             My Bookings
           </a>
+        </div>
+         {/* Logout Option */}
+         <div className="mt-10">
+          <button
+            onClick={handleLogout}
+            className="px-6 py-4 bg-red-600 text-white text-lg font-medium rounded-lg shadow hover:bg-red-500 transition duration-300 ease-in-out"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </div>

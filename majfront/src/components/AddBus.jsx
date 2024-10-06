@@ -6,8 +6,8 @@ export default function AddBus() {
   const [busData, setBusData] = useState({
     departureDate: '',
     departureTime: '',
-    source: '',
-    destination: '',
+    source: 'Bangalore', // Default value
+    destination: 'Chennai', // Default value
     price: '',
     busName: '',
     noOfSeatsAvailable: ''
@@ -105,27 +105,39 @@ export default function AddBus() {
             {/* Source */}
             <div className="w-full">
               <label className="block text-gray-700 text-sm mb-2">Source</label>
-              <input
-                type="text"
+              <select
                 name="source"
                 value={busData.source}
                 onChange={handleChange}
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-300"
-              />
+              >
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Tirupati">Tirupati</option>
+              </select>
             </div>
 
             {/* Destination */}
             <div className="w-full">
               <label className="block text-gray-700 text-sm mb-2">Destination</label>
-              <input
-                type="text"
+              <select
                 name="destination"
                 value={busData.destination}
                 onChange={handleChange}
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-300"
-              />
+              >
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Tirupati">Tirupati</option>
+              </select>
             </div>
           </div>
 

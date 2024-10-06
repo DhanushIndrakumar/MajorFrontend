@@ -17,6 +17,7 @@ import Confirmation from './components/Confirmation';
 import AddBus from './components/AddBus';
 import ViewAllBookings from './components/ViewAllBookings';
 import AllBuses from './components/AllBuses';
+import Logout from './components/Logout';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/addBus" element={<AddBus />} />
           <Route path="/viewAllBookings" element={<ViewAllBookings />} />
           <Route path="/allBuses" element={<AllBuses />} />
+          <Route path="/logout" element={<Logout />}/>
           
       </Routes>
       
